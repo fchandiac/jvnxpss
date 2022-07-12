@@ -14,6 +14,7 @@ app.use(require('./routes/persons'))
 
 app.use(express.static(__dirname + '/out/'))
 
+
 app.listen(port, () => {
     console.log('server work! at port: ' + port)
 })

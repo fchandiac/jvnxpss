@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const persons = require('../database/controllers/persons')
 
-router.get('/persons/find_all', (req, res) => {
+router.get('/persons/findAll', (req, res) => {
     persons.findAll().then(data => {
         res.json(data)
     }).catch(err => {
@@ -12,6 +12,14 @@ router.get('/persons/find_all', (req, res) => {
 
 router.post('/persons/create', (req, res) => {
     persons.create(req.body.rut, req.body.name, req.body.phone, req.body.mail, req.body.gender, req.body.born).then(data => {
+        res.json(data)
+    }).catch(err => {
+        res.json(err)
+    })
+})
+
+router.post('/persons/findOneByRut', (req, res) => {
+    persons.findOneByRut(req.body.rut).then(data => {
         res.json(data)
     }).catch(err => {
         res.json(err)

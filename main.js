@@ -10,10 +10,19 @@ const cors = require('cors')
 
 app.use(cors({ origin: '*' }))
 app.use(require('./routes/persons'))
-
-
 app.use(express.static(__dirname + '/out/'))
 
+app.get('/data',function(req,res) {
+    res.sendFile(__dirname + '/out/data.html');
+});
+
+app.get('/validate',function(req,res) {
+    res.sendFile(__dirname + '/out/validate.html');
+});
+
+app.get('/',function(req,res) {
+    res.sendFile(__dirname + '/out/index.html');
+});
 
 app.listen(port, () => {
     console.log('server work! at port: ' + port)

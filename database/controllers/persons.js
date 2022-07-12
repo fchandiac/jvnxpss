@@ -1,9 +1,8 @@
 const {Persons} = require('../db')
-const {Addresses} = require('../db')
 const persons = {}
 
 async function findAll(){
-    const person = await Persons.findAll({include: Addresses}).then(data => { return {'code': 1, 'data':data}}).catch(err => {return {'code': 0, 'data':err}})
+    const person = await Persons.findAll().then(data => { return {'code': 1, 'data':data}}).catch(err => {return {'code': 0, 'data':err}})
     return person
 }
 

@@ -4,11 +4,14 @@ export JOVEN_DB=joven
 export JOVEN_DB_USER=root
 export JOVEN_DB_PASS=Fenasantma
 export PORT=3001
+export HOST=localhost
 
 variables de entonrno karmika.cl
-JOVEN_DB=
-JOVEN_DB_USER=
-JOVEN_DB_PASS=
+JOVEN_DB=karmikac_joven
+JOVEN_DB_USER=karmikac_joven
+JOVEN_DB_PASS=joven_2022_1234
+PORT=3001
+HOST=joven.karmika.cl
 _______________________________
 
 npx sequelize-cli db:migrate:undo:all

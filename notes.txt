@@ -1,0 +1,15 @@
+_______________________________
+variables de entonrno local
+export JOVEN_DB=joven   
+export JOVEN_DB_USER=root
+export JOVEN_DB_PASS=Fenasantma
+export PORT=3001
+
+variables de entonrno karmika.cl
+JOVEN_DB=
+JOVEN_DB_USER=
+JOVEN_DB_PASS=
+_______________________________
+
+npx sequelize-cli db:migrate:undo:all
+npx sequelize db:migrate
